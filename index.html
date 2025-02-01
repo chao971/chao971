@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新年快乐</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-red-500 to-yellow-400 min-h-screen flex flex-col items-center justify-center text-white">
+    <div class="text-center fade-in">
+        <h1 class="text-6xl font-bold mb-4">新年已开始</h1>
+        <p class="text-2xl mb-8">“巳巳”如意 ， 岁岁平安</p>
+        <div id="current-time" class="text-4xl font-mono"></div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // 初始化时间
+    </script>
+</body>
+</html>
