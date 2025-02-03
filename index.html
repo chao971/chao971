@@ -15,7 +15,6 @@
             animation: fadeIn 1.5s ease-in-out;
         }
 
-        /* 修改后的渐变背景动画 */
         @keyframes gradientBackground {
             0% { background-color: #ff7e5f; }
             50% { background-color: #feb47b; }
@@ -46,7 +45,15 @@
             color: #9ca3af;
         }
 
-        /* 调整后的切换按钮 */
+        /* 倒计时暗黑模式适配 */
+        body.dark-mode .countdown-container div[class*="bg-white"] {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+        body.dark-mode .countdown-container .text-gray-200 {
+            color: rgba(229, 231, 235, 0.7) !important;
+        }
+
+        /* 切换按钮样式 */
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -78,7 +85,6 @@
             display: block;
         }
 
-        /* 移动端调整 */
         @media (max-width: 768px) {
             body {
                 padding-top: 10px;
@@ -90,11 +96,13 @@
             p {
                 margin-bottom: 24px;
             }
+            .countdown-container div {
+                padding: 12px !important;
+            }
         }
     </style>
 </head>
 <body class="fade-in dynamic-bg min-h-screen flex flex-col justify-center items-center">
-    <!-- 暗黑模式切换按钮 -->
     <div class="theme-toggle">
         <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path class="light-mode-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -112,9 +120,29 @@
         新年已开始
     </p>
 
-    <!-- 移除时间显示部分 -->
+    <!-- 倒计时容器 -->
+    <div class="countdown-container text-center space-y-4 mb-8 fade-in">
+        <div class="text-2xl md:text-3xl font-light text-white">距离2025年新年还有</div>
+        <div class="flex justify-center gap-4 md:gap-6">
+            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
+                <div class="text-4xl md:text-5xl font-bold text-white" id="days">00</div>
+                <div class="text-sm text-gray-200">天</div>
+            </div>
+            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
+                <div class="text-4xl md:text-5xl font-bold text-white" id="hours">00</div>
+                <div class="text-sm text-gray-200">小时</div>
+            </div>
+            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
+                <div class="text-4xl md:text-5xl font-bold text-white" id="minutes">00</div>
+                <div class="text-sm text-gray-200">分</div>
+            </div>
+            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
+                <div class="text-4xl md:text-5xl font-bold text-white" id="seconds">00</div>
+                <div class="text-sm text-gray-200">秒</div>
+            </div>
+        </div>
+    </div>
 
-    <!-- 底部信息 -->
     <footer class="fixed bottom-10 left-0 right-0 bg-black/30 py-3 px-6 backdrop-blur-sm">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <div class="text-sm text-white">
@@ -128,7 +156,7 @@
     </footer>
 
     <script>
-        // 暗黑模式切换功能
+        // 暗黑模式切换
         document.querySelector('.theme-toggle').addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
@@ -140,6 +168,36 @@
         if (savedTheme === 'dark') {
             document.body.classList.add('dark-mode');
         }
+
+        // 新年倒计时功能
+        function updateCountdown() {
+            const targetDate = new Date('2026-02-17T00:00:00');
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.querySelector('.countdown-container').innerHTML = `
+                    <div class="text-3xl md:text-4xl font-light text-white">
+                        🎉 新年快乐！万事如意！🎉
+                    </div>
+                `;
+                clearInterval(countdownInterval);
+            }
+        }
+
+        // 启动倒计时
+        let countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
