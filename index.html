@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新年快乐</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- 引入Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         @keyframes fadeIn {
@@ -27,7 +26,6 @@
             animation: gradientBackground 10s infinite;
         }
 
-        /* 设置全局字体为Poppins */
         body {
             font-family: 'Poppins', sans-serif;
         }
@@ -42,6 +40,19 @@
     </p>
     <div id="clock" class="text-2xl md:text-3xl text-center text-white font-medium"></div>
 
+    <!-- 新增底部信息 -->
+    <footer class="fixed bottom-10 left-0 right-0 bg-black/30 py-3 px-6 backdrop-blur-sm">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="text-sm text-white">
+                &copy; 2025 web since 2013 deepseek AI generate
+            </div>
+            <nav class="flex space-x-4">
+                <a href="/" class="text-white hover:text-white text-sm transition-colors">首页</a>
+                <a href="/Archives" class="text-white hover:text-white text-sm transition-colors">归档</a>
+            </nav>
+        </div>
+    </footer>
+
     <script>
         function updateTime() {
             const now = new Date();
@@ -52,7 +63,7 @@
         }
 
         setInterval(updateTime, 1000);
-        updateTime(); // 初始化时间
+        updateTime();
     </script>
 </body>
 </html>
