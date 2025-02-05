@@ -5,282 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新年快乐</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
         .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        @keyframes gradientBackground {
-            0% { background-color: #ff7e5f; }
-            50% { background-color: #feb47b; }
-            100% { background-color: #ff7e5f; }
-        }
-        @keyframes darkGradientBackground {
-            0% { background-color: #222232; }
-            50% { background-color: #27333b; }
-            100% { background-color: #0c1116; }
-        }
-        .dynamic-bg {
-            animation: gradientBackground 10s infinite;
-        }
-        body.dark-mode {
-            animation: darkGradientBackground 10s infinite;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            position: relative;
-        }
-
-        /* 暗黑模式文字颜色 */
-        body.dark-mode .text-white {
-            color: #e5e7eb;
-        }
-        body.dark-mode .text-gray-200 {
-            color: #9ca3af;
-        }
-
-        /* 倒计时暗黑模式适配 */
-        body.dark-mode .countdown-container div[class*="bg-white"] {
-            background: rgba(255, 255, 255, 0.1) !important;
-        }
-        body.dark-mode .countdown-container .text-gray-200 {
-            color: rgba(229, 231, 235, 0.7) !important;
-        }
-
-        /* 切换按钮样式 */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            padding: 6px;
-            transition: all 0.3s ease;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        .theme-icon {
-            width: 12px;
-            height: 12px;
-        }
-        .theme-icon .dark-mode-icon,
-        body.dark-mode .theme-icon .light-mode-icon {
-            display: none;
-        }
-        body.dark-mode .theme-icon .dark-mode-icon {
-            display: block;
-        }
-
-        /* 汉堡菜单样式 */
-        .hamburger-menu {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            padding: 6px;
-            transition: all 0.3s ease;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hamburger-menu:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        .hamburger-icon {
-            width: 12px;
-            height: 12px;
-        }
-        .hamburger-icon .bar {
-            width: 100%;
-            height: 2px;
-            background-color: white;
-            margin: 2px 0;
-        }
-
-        /* 导航栏样式 */
-        .nav-menu {
-            position: fixed;
-            top: 60px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            padding: 8px;
-            display: none;
-            flex-direction: column;
-            gap: 8px;
-            backdrop-filter: blur(10px);
-        }
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-        .nav-menu a:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding-top: 10px;
-            }
-            h1 {
-                margin-top: -20px;
-                margin-bottom: 12px;
-            }
-            p {
-                margin-bottom: 24px;
-            }
-            .countdown-container div {
-                padding: 12px !important;
-            }
-            .countdown-container {
-                width: 100%;
-                padding: 0 16px;
-            }
-            .countdown-container .flex {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            .countdown-container .flex > div {
-                flex: 1 1 calc(50% - 8px);
-                max-width: calc(50% - 8px);
-            }
-            .countdown-container .text-4xl {
-                font-size: 2rem;
-            }
-            .countdown-container .text-5xl {
-                font-size: 2.5rem;
-            }
+            animation: fadeIn 2s ease-in-out;
         }
     </style>
 </head>
-<body class="fade-in dynamic-bg min-h-screen flex flex-col justify-center items-center">
-    <!-- 汉堡菜单 -->
-    <div class="hamburger-menu">
-        <div class="hamburger-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </div>
-
-    <!-- 导航栏 -->
-    <div class="nav-menu">
-        <a href="/">首页</a>
-        <a href="/Archives">归档</a>
-    </div>
-
-    <!-- 主题切换按钮 -->
-    <div class="theme-toggle">
-        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path class="light-mode-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
-            <path class="dark-mode-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" 
-                  fill="currentColor"/>
-        </svg>
-    </div>
-
-    <h1 class="text-3xl md:text-4xl font-extralight text-center text-white mb-4 fade-in">
-        “巳巳”如意   岁岁平安
-    </h1>
-    <p class="text-lg md:text-xl font-extralight text-gray-200 mb-8 fade-in">
-        新年已开始
-    </p>
-
-    <!-- 倒计时容器 -->
-    <div class="countdown-container text-center space-y-1 mb-4 fade-in">
-        <div class="text-xl md:text-l font-light text-white">距离2026年新年</div>
-        <div class="flex justify-center gap-4 md:gap-6">
-            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-                <div class="text-4xl md:text-5xl font-bold text-white" id="days">00</div>
-                <div class="text-sm text-gray-200">天</div>
-            </div>
-            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-                <div class="text-4xl md:text-5xl font-bold text-white" id="hours">00</div>
-                <div class="text-sm text-gray-200">小时</div>
-            </div>
-            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-                <div class="text-4xl md:text-5xl font-bold text-white" id="minutes">00</div>
-                <div class="text-sm text-gray-200">分</div>
-            </div>
-            <div class="bg-white/20 p-4 rounded-lg shadow-lg backdrop-blur-sm">
-                <div class="text-4xl md:text-5xl font-bold text-white" id="seconds">00</div>
-                <div class="text-sm text-gray-200">秒</div>
-            </div>
-        </div>
+<body class="bg-gradient-to-r from-red-500 to-yellow-400 min-h-screen flex flex-col items-center justify-center text-white">
+    <div class="text-center fade-in">
+        <h1 class="text-5xl font-normal mb-4">新年已开始</h1>
+        <p class="text-2xl mb-8">“巳巳”如意 ， 岁岁平安</p>
+        <div id="current-time" class="text-4xl font-mono"></div>
     </div>
 
     <script>
-        // 暗黑模式切换
-        document.querySelector('.theme-toggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-
-        // 初始化主题
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-        }
-
-        // 汉堡菜单切换
-        document.querySelector('.hamburger-menu').addEventListener('click', () => {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-        });
-
-        // 新年倒计时功能
-        function updateCountdown() {
-            const targetDate = new Date('2026-02-17T00:00:00');
+        function updateTime() {
             const now = new Date();
-            const diff = targetDate - now;
-
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-            } else {
-                document.querySelector('.countdown-container').innerHTML = `
-                    <div class="text-xl md:text-l font-light text-white">
-                        🎉 新年快乐！万事如意！🎉
-                    </div>
-                `;
-                clearInterval(countdownInterval);
-            }
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
         }
 
-        // 启动倒计时
-        let countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
+        setInterval(updateTime, 1000);
+        updateTime(); // 初始化时间
     </script>
 </body>
 </html>
