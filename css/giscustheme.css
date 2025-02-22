@@ -1,0 +1,66 @@
+/* 自定义 Giscus 评论区域 */
+.giscus, .giscus-frame {
+  width: 100%;
+  border: none;
+  background-color: #f9f9f9; /* 背景颜色 */
+  border-radius: 8px; /* 圆角 */
+  padding: 16px; /* 内边距 */
+}
+
+/* 评论框样式 */
+.giscus .giscus-comment-box {
+  background-color: #fff; /* 评论框背景颜色 */
+  border: 1px solid #ddd; /* 边框 */
+  border-radius: 4px; /* 圆角 */
+  padding: 12px; /* 内边距 */
+  margin-bottom: 16px; /* 底部外边距 */
+}
+
+/* 评论列表样式 */
+.giscus .giscus-comments {
+  margin-top: 16px; /* 顶部外边距 */
+}
+
+/* 单个评论样式 */
+.giscus .giscus-comment {
+  background-color: #fff; /* 评论背景颜色 */
+  border: 1px solid #eee; /* 边框 */
+  border-radius: 4px; /* 圆角 */
+  padding: 12px; /* 内边距 */
+  margin-bottom: 12px; /* 底部外边距 */
+}
+
+/* 用户头像样式 */
+.giscus .giscus-comment-avatar {
+  width: 40px; /* 头像大小 */
+  height: 40px;
+  border-radius: 50%; /* 圆形头像 */
+  margin-right: 12px; /* 右边距 */
+}
+
+/* 评论内容样式 */
+.giscus .giscus-comment-content {
+  font-size: 14px; /* 字体大小 */
+  color: #333; /* 字体颜色 */
+}
+
+/* 时间戳样式 */
+.giscus .giscus-comment-timestamp {
+  font-size: 12px; /* 字体大小 */
+  color: #999; /* 字体颜色 */
+  margin-top: 4px; /* 顶部外边距 */
+}
+
+/* 加载更多按钮样式 */
+.giscus .giscus-load-more {
+  background-color: #007bff; /* 按钮背景颜色 */
+  color: #fff; /* 按钮文字颜色 */
+  border: none;
+  border-radius: 4px; /* 圆角 */
+  padding: 8px 16px; /* 内边距 */
+  cursor: pointer; /* 鼠标指针 */
+}
+
+.giscus .giscus-load-more:hover {
+  background-color: #0056b3; /* 鼠标悬停时的背景颜色 */
+}
