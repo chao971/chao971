@@ -1,7 +1,7 @@
 /* 整体评论区域 */
 .giscus, .giscus-frame {
   width: 100%;
-  border: 1px solid #e0e0e0; /* 最外部边框 */
+  border: 1px solid #f0f0f0; /* 更浅的边框颜色 */
   background-color: #ffffff; /* 白色背景 */
   font-family: "SimSun", "宋体", serif; /* 使用宋体 */
   color: #000000; /* 黑色字体 */
