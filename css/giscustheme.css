@@ -1,100 +1,106 @@
-main {
-  --primary-default: 53, 120, 229;
-  --bg-default: 66, 66, 66;
-  --color-prettylights-syntax-comment: #8b949e;
-  --color-prettylights-syntax-constant: #79c0ff;
-  --color-prettylights-syntax-entity: #d2a8ff;
-  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
-  --color-prettylights-syntax-entity-tag: #7ee787;
-  --color-prettylights-syntax-keyword: #ff7b72;
-  --color-prettylights-syntax-string: #a5d6ff;
-  --color-prettylights-syntax-variable: #ffa657;
-  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
-  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
-  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
-  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
-  --color-prettylights-syntax-carriage-return-bg: #b62324;
-  --color-prettylights-syntax-string-regexp: #7ee787;
-  --color-prettylights-syntax-markup-list: #f2cc60;
-  --color-prettylights-syntax-markup-heading: #1f6feb;
-  --color-prettylights-syntax-markup-italic: #c9d1d9;
-  --color-prettylights-syntax-markup-bold: #c9d1d9;
-  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
-  --color-prettylights-syntax-markup-deleted-bg: #67060c;
-  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
-  --color-prettylights-syntax-markup-inserted-bg: #033a16;
-  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
-  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
-  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
-  --color-prettylights-syntax-markup-ignored-bg: #1158c7;
-  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
-  --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
-  --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
-  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
-  --color-btn-text: rgb(235 235 245 / 86%);
-  --color-btn-bg: rgba(var(--bg-default), 1);
-  --color-btn-border: rgba(var(--bg-default), 1);
-  --color-btn-shadow: 0 1px 0 rgba(var(--bg-default), 1);
-  --color-btn-inset-shadow: inset 0 1px 0 rgba(var(--bg-default), 1);
-  --color-btn-hover-bg: rgba(var(--bg-default), 0.5);
-  --color-btn-hover-border: rgba(var(--bg-default), 0.5);
-  --color-btn-active-bg: rgba(var(--primary-default), 0.2);
-  --color-btn-active-border: rgba(var(--primary-default), 1);
-  --color-btn-selected-bg: rgba(var(--primary-default), 0.15);
-  --color-btn-primary-text: rgb(255 255 255 / 100%);
-  --color-btn-primary-bg: rgba(var(--primary-default), 0.45);
-  --color-btn-primary-border: rgba(var(--primary-default), 0.5);
-  --color-btn-primary-shadow: 0 1px 0 rgb(27 31 36 / 10%);
-  --color-btn-primary-inset-shadow: inset 0 1px 0 hsl(0deg 0% 100% / 3%);
-  --color-btn-primary-hover-bg: rgba(var(--primary-default), 0.53);
-  --color-btn-primary-hover-border: rgba(var(--primary-default), 0.75);
-  --color-btn-primary-selected-bg: rgba(var(--primary-default), 0.45);
-  --color-btn-primary-selected-shadow: inset 0 1px 0 rgb(0 45 17 / 20%);
-  --color-btn-primary-disabled-text: rgb(255 255 255 / 80%);
-  --color-btn-primary-disabled-bg: rgba(var(--primary-default), 0.5);
-  --color-btn-primary-disabled-border: rgba(var(--primary-default), 0.5);
-  --color-action-list-item-default-hover-bg: rgb(177 186 196 / 12%);
-  --color-segmented-control-bg: rgb(110 118 129 / 10%);
-  --color-segmented-control-button-bg: #0d1117;
-  --color-segmented-control-button-selected-border: rgba(
-    var(--bg-default),
-    0.85
-  );
-  --color-fg-default: rgb(235 235 245 / 86%);
-  --color-fg-muted: rgb(235 235 245 / 60%);
-  --color-fg-subtle: rgb(235 235 245 / 50%);
-  --color-canvas-default: rgb(40 40 40 / 100%);
-  --color-canvas-overlay: rgb(37 37 37 / 100%);
-  --color-canvas-inset: rgb(37 37 37 / 100%);
-  --color-canvas-subtle: rgba(var(--bg-default), 1);
-  --color-border-default: rgba(var(--bg-default), 0.85);
-  --color-border-muted: rgb(175 184 193 / 20%);
-  --color-neutral-muted: rgb(175 184 193 / 20%);
-  --color-accent-fg: rgba(var(--primary-default), 0.85);
-  --color-accent-emphasis: rgba(var(--primary-default), 0.95);
-  --color-accent-muted: rgba(var(--primary-default), 0.4);
-  --color-accent-subtle: rgba(var(--primary-default), 0.1);
-  --color-success-fg: #3fb950;
-  --color-attention-fg: #d29922;
-  --color-attention-muted: rgb(187 128 9 / 40%);
-  --color-attention-subtle: rgb(187 128 9 / 15%);
-  --color-danger-fg: #f85149;
-  --color-danger-muted: rgb(248 81 73 / 40%);
-  --color-danger-subtle: rgb(248 81 73 / 10%);
-  --color-primer-shadow-inset: 0 1px 0 rgba(var(--bg-default), 1),
-    inset 0 1px 0 rgba(var(--bg-default), 1);
-  --color-scale-gray-7: rgb(22 22 24 / 100%);
-  --color-scale-blue-8: rgb(16 185 129 / 15%);
+:root {
+  /* 基础颜色 */
+  --bg-default: 255, 255, 255; /* 白色背景 */
+  --primary-default: 53, 120, 229; /* 主色调 */
 
-  /*! Extensions from @primer/css/alerts/flash.scss */
-  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
-  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+  /* 文字颜色 */
+  --color-text-primary: rgb(20 20 19 / 84%); /* 主要文字颜色 */
+  --color-text-secondary: rgb(20 20 19 / 60%); /* 次要文字颜色 */
+  --color-text-muted: rgb(20 20 19 / 50%); /* 弱化文字颜色 */
+
+  /* 背景颜色 */
+  --color-bg-primary: rgb(var(--bg-default)); /* 主要背景颜色 */
+  --color-bg-secondary: rgba(var(--bg-default), 0.9); /* 次要背景颜色 */
+  --color-bg-overlay: rgba(var(--bg-default), 0.8); /* 浮层背景颜色 */
+
+  /* 编辑框样式 */
+  --color-input-bg: transparent; /* 编辑框背景透明 */
+  --color-input-border: transparent; /* 编辑框无边框 */
+  --color-input-text: var(--color-text-primary); /* 编辑框文字颜色 */
+
+  /* 按钮样式 */
+  --color-btn-bg: transparent; /* 按钮背景透明 */
+  --color-btn-border: transparent; /* 按钮无边框 */
+  --color-btn-text: var(--color-text-primary); /* 按钮文字颜色 */
+  --color-btn-hover-bg: rgba(var(--primary-default), 0.1); /* 按钮悬停背景 */
+  --color-btn-hover-border: rgba(var(--primary-default), 0.2); /* 按钮悬停边框 */
+
+  /* 主按钮样式 */
+  --color-btn-primary-bg: rgba(var(--primary-default), 0.8); /* 主按钮背景 */
+  --color-btn-primary-border: rgba(var(--primary-default), 0.9); /* 主按钮边框 */
+  --color-btn-primary-text: rgb(255 255 255); /* 主按钮文字颜色 */
+  --color-btn-primary-hover-bg: rgba(var(--primary-default), 0.9); /* 主按钮悬停背景 */
+  --color-btn-primary-hover-border: rgba(var(--primary-default), 1); /* 主按钮悬停边框 */
+
+  /* 边框颜色 */
+  --color-border-primary: rgba(20 20 19 / 10%); /* 主要边框颜色 */
+  --color-border-secondary: rgba(20 20 19 / 5%); /* 次要边框颜色 */
+
+  /* 其他颜色 */
+  --color-link: rgba(var(--primary-default), 0.9); /* 链接颜色 */
+  --color-link-hover: rgba(var(--primary-default), 1); /* 链接悬停颜色 */
+  --color-success: #3fb950; /* 成功颜色 */
+  --color-warning: #d29922; /* 警告颜色 */
+  --color-error: #f85149; /* 错误颜色 */
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-main .pagination-loader-container {
-  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
+/* 应用到 Giscus 容器 */
+.giscus, .giscus-frame {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
 }
 
-main .gsc-loading-image {
-  background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
+/* 编辑框样式 */
+.giscus .giscus-comment-box {
+  background-color: var(--color-input-bg) !important;
+  border: 1px solid var(--color-input-border) !important;
+  color: var(--color-input-text) !important;
+}
+
+/* 按钮样式 */
+.giscus .giscus-button {
+  background-color: var(--color-btn-bg) !important;
+  border: 1px solid var(--color-btn-border) !important;
+  color: var(--color-btn-text) !important;
+}
+
+.giscus .giscus-button:hover {
+  background-color: var(--color-btn-hover-bg) !important;
+  border-color: var(--color-btn-hover-border) !important;
+}
+
+/* 主按钮样式 */
+.giscus .giscus-button-primary {
+  background-color: var(--color-btn-primary-bg) !important;
+  border-color: var(--color-btn-primary-border) !important;
+  color: var(--color-btn-primary-text) !important;
+}
+
+.giscus .giscus-button-primary:hover {
+  background-color: var(--color-btn-primary-hover-bg) !important;
+  border-color: var(--color-btn-primary-hover-border) !important;
+}
+
+/* 链接样式 */
+.giscus a {
+  color: var(--color-link) !important;
+}
+
+.giscus a:hover {
+  color: var(--color-link-hover) !important;
+}
+
+/* 评论区域样式 */
+.giscus .giscus-comment {
+  border-bottom: 1px solid var(--color-border-primary) !important;
+}
+
+/* 加载动画 */
+.giscus .giscus-loading {
+  background-image: url("https://assets.bgithub.xyz/images/mona-loading-dark.gif") !important;
 }
