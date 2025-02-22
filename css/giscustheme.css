@@ -1,17 +1,19 @@
 /* 整体评论区域 */
 .giscus, .giscus-frame {
   width: 100%;
-  border: none;
+  border: 1px solid #e0e0e0; /* 最外部边框 */
   background-color: #ffffff; /* 白色背景 */
   font-family: "SimSun", "宋体", serif; /* 使用宋体 */
   color: #000000; /* 黑色字体 */
   line-height: 1.6; /* 行高 */
+  border-radius: 8px; /* 圆角 */
+  padding: 16px; /* 内边距 */
 }
 
 /* 评论框样式 */
 .giscus .giscus-comment-box {
   background-color: #f8f8f8; /* 浅灰色背景 */
-  border: 1px solid #e0e0e0; /* 浅灰色边框 */
+  border: none; /* 去除边框 */
   border-radius: 4px; /* 圆角 */
   padding: 12px; /* 内边距 */
   margin-bottom: 16px; /* 底部外边距 */
@@ -24,8 +26,8 @@
 
 /* 单个评论样式 */
 .giscus .giscus-comment {
-  background-color: #ffffff; /* 白色背景 */
-  border-bottom: 1px solid #e0e0e0; /* 底部边框 */
+  background-color: transparent; /* 透明背景 */
+  border: none; /* 去除边框 */
   padding: 12px 0; /* 内边距 */
   margin-bottom: 12px; /* 底部外边距 */
 }
